@@ -1,17 +1,17 @@
 --[[
-    DATEINSERTER
+    TABLES
     This module is responsible for handling the insertion of date and time into a neorg buffer.
 --]]
 
 require('neorg.modules.base')
 require('neorg.events')
 
-local module = neorg.modules.create("utilities.dateinserter")
+local module = neorg.modules.create("utilities.tables")
 local log = require('neorg.external.log')
 
 module.load = function()
-  log.info("DATEINSERTER loaded!")
-  neorg.events.broadcast_event(neorg.events.create(module, "utilities.dateinserter.events.our_event"))
+  log.info("TABLES loaded!")
+  neorg.events.broadcast_event(neorg.events.create(module, "utilities.tables.events.our_event"))
 end
 
 module.on_event = function(event)
@@ -36,7 +36,7 @@ module.events.defined = {
 
 module.events.subscribed = {
 
-  ["utilities.dateinserter"] = {
+  ["utilities.tables"] = {
     our_event = true
   }
 
